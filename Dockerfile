@@ -4,7 +4,7 @@ RUN apt-get update \
     curl \
     git \
  && rm -rf /var/lib/apt/lists/*
-ADD cov-analysis.tgz /tmp/cov-analysis.tgz
+COPY cov-analysis.tgz /tmp/cov-analysis.tgz
 RUN tar zxvf /tmp/cov-analysis.tgz -C /opt \
     && rm /tmp/cov-analysis.tgz \
     && mv /opt/cov-analysis-linux64-* /opt/cov
